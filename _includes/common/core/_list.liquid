@@ -12,4 +12,10 @@
 {% include common/rest/tabs.liquid size=size_p1 %}- [{{ item.title | default: item.name }}]({{ item.url | relative_url }})
 {%- endfor -%}
 
-{%- for workdir in workdir_dirs %}{% include common/core/_list.liquid %}{% endfor -%}
+{% comment %}
+    {% raw %}
+        {%- for workdir in workdir_dirs %}{% include common/core/_list.liquid %}{% endfor -%}
+        Here is some text that I don't want displayed and
+        {% some_liquid_stuff_that_I_don't_want_parsed %}
+    {% endraw %}
+{% endcomment %}
